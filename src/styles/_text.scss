@@ -1,17 +1,33 @@
 @mixin size-1 {
   font-size: #{$font-size-base * 1.4};
+
+  @include media(medium) {
+    font-size: #{$font-size-base * 1.9};
+  }
 }
 
 @mixin size-2 {
   font-size: #{$font-size-base * 1.1};
+
+  @include media(medium) {
+    font-size: #{$font-size-base * 1.5};
+  }
 }
 
 @mixin size-3 {
   font-size: #{$font-size-base * 1};
+  
+  @include media(medium) {
+    font-size: #{$font-size-base * 1.4};
+  }
 }
 
 @mixin size-regular {
   font-size: #{$font-size-base * 0.75};
+
+  @include media(medium) {
+    font-size: #{$font-size-base * 0.8};
+  }
 }
 
 h1, .is-size-1 {
