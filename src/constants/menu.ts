@@ -24,8 +24,8 @@ export const secondaryMenu: MenuItem[] = [
   { key: 's_resume', link: '#', label: 'Resume' }
 ];
 export const footerMenu: MenuItem[] = [
-  { key: '', link: '', label: '' },
-  { key: '', link: '', label: '' },
-  { key: '', link: '', label: '' },
-  { key: '', link: '', label: '' }
+  { key: 'f_github', link: '#', label: 'Github' },
+  { key: 'f_linkedin', link: '#', label: 'LinkedIn' },
+  { key: 'f_resume', link: '#', label: 'Resume' },
+  { key: 'f_email', link: 'mailto:jnpco.98@gmail.com', label: 'Contact' }
 ];

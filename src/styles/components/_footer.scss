@@ -1,0 +1,36 @@
+.c-footer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background: $color-background-secondary;
+  border-radius: 1rem 1rem 0 0;
+
+  a {
+    margin-right: 0.3rem;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  padding: 1rem $gutter;
+
+  @include media(xsmall) {
+    padding: 1rem $gutter-xsmall;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include media(small) {
+    padding: 1.4rem $gutter-small;
+  }
+
+  @include media(medium) {
+    padding: 1.4rem $gutter-medium;
+  }
+
+  @include media(large) {
+    padding: 1.4rem $gutter-large;
+  }
+}
