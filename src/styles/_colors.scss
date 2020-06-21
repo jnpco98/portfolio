@@ -8,7 +8,7 @@ $color-primary-hover : #343A40;
 
 $color-selection: lightgray;
 
-$color-backdrop: #343A40;
+$color-backdrop: transparentize($color-default, 0.5);
 
 $color-info: #EE7752;
 $color-success: #23DBAB;
