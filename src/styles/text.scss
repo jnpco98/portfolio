@@ -1,0 +1,45 @@
+@mixin size-1 {
+  font-size: #{$font-size-base * 1.4};
+}
+
+@mixin size-2 {
+  font-size: #{$font-size-base * 1.1};
+}
+
+@mixin size-3 {
+  font-size: #{$font-size-base * 1};
+}
+
+@mixin size-regular {
+  font-size: #{$font-size-base * 0.8};
+}
+
+h1, .is-size-1 {
+  @include size-1();
+  font-family: $font-secondary;
+  font-weight: $font-bold;
+  margin: 1.4rem 0;
+}
+
+h2, .is-size-2 {
+  @include size-2();
+  font-family: $font-secondary;
+  font-weight: $font-bold;
+  margin: 0.7rem 0;
+}
+
+h3, .is-size-3 {
+  @include size-3();
+  font-family: $font-secondary;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+h4, p, span, label, a, .is-size-reg {
+  @include size-regular();
+  margin: 0.2rem 0;
+}
+
+a {
+  
+}
