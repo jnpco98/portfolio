@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Simplebar from 'simplebar-react';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
@@ -17,27 +18,30 @@ function App() {
   }, []);
 
   return (
-    <div className="page-app">
-      {
-        loading ? <Loader /> :
-          <React.Fragment>
-            <Header />
-            <Banner pageTitle/>
-            <div className="o-spacer" />
-            <About />
-            <div className="o-spacer" />
-            <Features />
-            <div className="o-spacer" />
-            <Showcase />
-            <div className="o-spacer" />
-            <TextBlock />
-            <div className="o-spacer" />
-            <Contact />
-            <div className="o-spacer" />
-            <Footer />
-          </React.Fragment>
-      }
-    </div>
+    <Simplebar style={{ maxHeight: '100vh' }}>
+      <div className="page-app">
+        {
+          loading ? 
+            <Loader /> :
+            <React.Fragment>
+              <Header />
+              <Banner pageTitle/>
+              <div className="o-spacer" />
+              <About />
+              <div className="o-spacer" />
+              <Features />
+              <div className="o-spacer" />
+              <Showcase />
+              <div className="o-spacer" />
+              <TextBlock />
+              <div className="o-spacer" />
+              <Contact />
+              <div className="o-spacer" />
+              <Footer />
+            </React.Fragment>
+        }
+      </div>
+    </Simplebar>
   );
 }
 
