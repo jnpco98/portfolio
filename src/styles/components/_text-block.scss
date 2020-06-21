@@ -1,0 +1,39 @@
+.c-text-block {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 2rem $gutter;
+  border-radius: 1rem;
+  background-color: $color-background-secondary;
+  text-align: center;
+
+  &__title {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    max-width: 20rem;
+  }
+
+  &__cta {
+    margin-top: 1rem;
+    align-self: center;
+  }
+
+  @include media(xsmall) {
+    padding: 2rem $gutter-xsmall;
+  }
+
+  @include media(small) {
+    padding: 3rem $gutter-small
+  }
+
+  @include media(medium) {
+    padding: 4rem $gutter-medium;
+  }
+
+  @include media(large) {
+    padding: 4rem $gutter-large;
+  }
+}
