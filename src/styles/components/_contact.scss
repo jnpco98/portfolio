@@ -1,0 +1,42 @@
+.c-contact {
+  width: 90%;
+  margin: auto;
+  padding: 0 $gutter;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+    &-cta {
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+  }
+
+  input {
+    margin-bottom: 0.5rem;
+  }
+
+  @include media(xsmall) {
+    padding: 0 $gutter-xsmall;
+  }
+
+  @include media(small) {
+    padding: 0 $gutter-small
+  }
+
+  @include media(medium) {
+    padding: 0 $gutter-medium;
+  }
+
+  @include media(large) {
+    padding: 0 $gutter-large;
+  }
+}
