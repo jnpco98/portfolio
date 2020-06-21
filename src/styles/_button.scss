@@ -1,7 +1,12 @@
 .o-btn {
+  display: block;
   color: $color-secondary;
   background-color: $color-accent;
   text-transform: uppercase;
   padding: 0.8rem 1rem;
   border-radius: 0.3rem;
+
+  &:before {
+    content: none;
+  }
 }
