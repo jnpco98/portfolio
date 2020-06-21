@@ -18,14 +18,14 @@ function Header() {
   });
 
   function renderLink(menuItem: MenuItem) {
-    return <a className="header__menu-item" href={menuItem.link}>
+    return <a className="c-header__menu-item" href={menuItem.link}>
       {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
     </a>
   }
 
   function renderHamburger() {
     return(
-      <li className="header__side-drawer-trigger">
+      <li className="c-header__side-drawer-trigger">
         <button className={`hamburger hamburger--spin${drawerActive ? " is-active" : ""}`} onClick={() => setDrawerActive(!drawerActive)}>
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
@@ -36,16 +36,16 @@ function Header() {
   }
 
   return (
-    <header className={`header${floating ? " is-floating" : ""}`}>
+    <header className={`c-header${floating ? " is-floating" : ""}`}>
       {/* Mobile header */}
       <ul className="is-mobile-only">{renderHamburger()}</ul>
       <ul className="is-mobile-only">
         {mobilePrimaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
       </ul>
-      <div className={`header__side-drawer is-mobile-only${drawerActive ? " is-active" : ""}`}>
+      <div className={`c-header__side-drawer is-mobile-only${drawerActive ? " is-active" : ""}`}>
         {mobileSecondaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
       </div>
-      <div className={`header__backdrop is-mobile-only${drawerActive ? " is-active" : ""}`} onClick={() => setDrawerActive(false)}/>
+      <div className={`c-header__backdrop is-mobile-only${drawerActive ? " is-active" : ""}`} onClick={() => setDrawerActive(false)}/>
 
       {/* Desktop header */}
       <ul className="is-desktop-only">
