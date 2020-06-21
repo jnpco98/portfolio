@@ -14,4 +14,7 @@
   @else if $screen == xlarge {
     @media (min-width: 1500px) { @content; }
   }
+  @else {
+    @media (min-width: $screen) { @content; }
+  }
 }

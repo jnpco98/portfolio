@@ -1,10 +1,18 @@
 .c-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: $max-screen-width;
   padding: 1.1rem $gutter 0.9rem;
-  position: relative;
+  transition: all 0.3s ease;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 4rem;
 
   a {
     align-self: flex-start;
@@ -13,6 +21,14 @@
 
   &.is-floating {
     position: fixed;
+    z-index: $z-sticky-topbar;
+    box-shadow: 0px 10px 13px -9px rgba(0, 0, 0, 0.75);
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &__spacer.is-floating {
+    height: 4rem;
+    width: 100%;
   }
 
   &__side-drawer {
@@ -38,15 +54,6 @@
       transform: translateX(0);
     }
 
-    @include media(xsmall) {
-      max-width: 23rem;
-    }
-
-    @include media(small) {
-      max-width: 28rem;
-      padding: $gutter-small;
-    }
-
     &-trigger {
       z-index: $z-side-drawer-trigger;
     }
@@ -54,21 +61,6 @@
     a {
       margin-bottom: 0.8rem;
     }
-  }
-
-  @include media(small){
-    padding: 1.3rem $gutter-small 1.1rem;
-  }
-  
-  @include media(medium) {
-    padding: 1.7rem $gutter-medium 1.5rem;
-    a {
-      margin-left: 1rem;
-    }
-  }
-
-  @include media(large) {
-    padding: 2rem $gutter-large 1.6rem;
   }
 
   &__backdrop {
@@ -86,6 +78,50 @@
     &.is-active {
       transform: translateY(0);
       opacity: 1;
+    }
+  }
+
+  @include media(xsmall) {
+    &__side-drawer {
+      max-width: 23rem;;
+    }
+  }
+
+  @include media(small){
+    padding: 1.3rem $gutter-small 1.1rem;
+
+    &__side-drawer {
+      max-width: 28rem;
+      padding: $gutter-small;
+    }
+  }
+  
+  @include media(medium) {
+    padding: 1.7rem $gutter-medium 1.5rem;
+    height: 5rem;
+
+    a {
+      margin-left: 1rem;
+    }
+
+    &__spacer.is-floating {
+      height: 5rem;
+    }
+  }
+
+  @include media(large) {
+    padding: 2rem $gutter-large 1.6rem;
+  }
+
+  @include media(1700px) {
+    &.is-floating {
+      padding: 2rem #{$gutter-large - 2} 1.6rem;
+    }
+  }
+  
+  @include media(2000px) {
+    &.is-floating {
+      padding: 2rem #{$gutter-large - 3.5} 1.6rem;
     }
   }
 }

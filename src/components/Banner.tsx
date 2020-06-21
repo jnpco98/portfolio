@@ -9,17 +9,13 @@ type Props = {
 function Banner(props: Props) {
   const { pageTitle } = props;
 
-  function renderTitle() {
-    return pageTitle ? <h1 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h1> :
-      <h2 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h2>
-  }
-
   return(
     <section className="c-banner">
       <img className="c-banner__image" src={bannerImg}/>
       <div className="c-banner__content">
-        {renderTitle()}
-        <p className="c-banner__content-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem soluta rerum nam, ex tempora aperiam vel ea culpa suscipit velit sit? Culpa, minima hic!</p>
+        {pageTitle ? <h1 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h1> :
+          <h2 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h2>}
+        <p className="c-banner__content-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem soluta rerum nam, ex tempora aperiam vel ea culpa suscipit velit sit?</p>
         <a className="c-banner__content-cta o-btn">Lorem, ipsum dolor.</a>
       </div>
     </section>

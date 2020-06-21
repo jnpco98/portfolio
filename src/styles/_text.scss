@@ -15,10 +15,10 @@
 }
 
 @mixin size-3 {
-  font-size: #{$font-size-base * 1};
+  font-size: #{$font-size-base * 0.9};
   
   @include media(medium) {
-    font-size: #{$font-size-base * 1.4};
+    font-size: #{$font-size-base * 1.3};
   }
 }
 

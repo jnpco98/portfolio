@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dompurify from 'dompurify';
 import { MenuItem, primaryMenu, secondaryMenu, mobilePrimaryMenu, mobileSecondaryMenu } from '../constants/menu';
 
-const DEFAULT_FLOATING_HEADER_HEIGHT = 30;
+const DEFAULT_FLOATING_HEADER_HEIGHT = 20;
 
 function Header() {
   const [floating, setFloating] = useState(false);
@@ -36,25 +36,28 @@ function Header() {
   }
 
   return (
-    <header className={`c-header${floating ? " is-floating" : ""}`}>
-      {/* Mobile header */}
-      <ul className="is-mobile-only">{renderHamburger()}</ul>
-      <ul className="is-mobile-only">
-        {mobilePrimaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
-      </ul>
-      <div className={`c-header__side-drawer is-mobile-only${drawerActive ? " is-active" : ""}`}>
-        {mobileSecondaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
-      </div>
-      <div className={`c-header__backdrop is-mobile-only${drawerActive ? " is-active" : ""}`} onClick={() => setDrawerActive(false)}/>
+    <React.Fragment>
+      <header className={`c-header${floating ? " is-floating" : ""}`}>
+        {/* Mobile header */}
+        <ul className="is-mobile-only">{renderHamburger()}</ul>
+        <ul className="is-mobile-only">
+          {mobilePrimaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
+        </ul>
+        <div className={`c-header__side-drawer is-mobile-only${drawerActive ? " is-active" : ""}`}>
+          {mobileSecondaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
+        </div>
+        <div className={`c-header__backdrop is-mobile-only${drawerActive ? " is-active" : ""}`} onClick={() => setDrawerActive(false)}/>
 
-      {/* Desktop header */}
-      <ul className="is-desktop-only">
-        {primaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
-      </ul>
-      <ul className="is-desktop-only">
-        {secondaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
-      </ul> 
-    </header>
+        {/* Desktop header */}
+        <ul className="is-desktop-only">
+          {primaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
+        </ul>
+        <ul className="is-desktop-only">
+          {secondaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
+        </ul>
+      </header>
+      <div className={`c-header__spacer${floating ? " is-floating" : ""}`}></div>
+    </React.Fragment>
   );
 }
 

@@ -15,10 +15,12 @@
 
 // Objects
 @import './button';
+@import './layout';
 
 // Components
 @import './components/header';
 @import './components/banner';
+@import './components/features';
 
 // Pages
 @import './pages/app';
