@@ -5,7 +5,7 @@ function Footer() {
   return(
     <footer className="c-footer">
       <p className="c-footer__copyright">
-        copyright@2020 John Ortiz
+        Copyright@2020 John Ortiz
       </p>
       <div>
         {footerMenu.map(m => <a key={m.key} href={m.link}>{m.label}</a>)}

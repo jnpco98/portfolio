@@ -7,30 +7,26 @@
   border-radius: 1rem 1rem 0 0;
 
   a {
-    margin-right: 0.3rem;
-
-    &:before {
-      content: none;
-    }
+    margin-right: 0.7rem;
   }
 
-  padding: 1rem $gutter;
+  padding: 1rem $gutter 0.8rem;
 
   @include media(xsmall) {
-    padding: 1rem $gutter-xsmall;
+    padding: 1rem $gutter-xsmall 0.8rem;
+  }
+  
+  @include media(small) {
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  @include media(small) {
-    padding: 1.4rem $gutter-small;
+    padding: 1.4rem $gutter-small 1.2rem;
   }
 
   @include media(medium) {
-    padding: 1.4rem $gutter-medium;
+    padding: 1.4rem $gutter-medium 1.2rem;
   }
 
   @include media(large) {
-    padding: 1.4rem $gutter-large;
+    padding: 1.4rem $gutter-large 1.2rem;
   }
 }

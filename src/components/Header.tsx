@@ -9,7 +9,7 @@ function Header() {
   const [drawerActive, setDrawerActive] = useState(false);
 
   function handleScroll() {
-    setFloating(window.pageYOffset >= DEFAULT_FLOATING_HEADER_HEIGHT);
+    setFloating(window.scrollY >= DEFAULT_FLOATING_HEADER_HEIGHT);
   }
 
   useEffect(() => {

@@ -43,10 +43,11 @@
 
         span {
           display: inline-block;
-          padding: 0.0625rem 0.4rem;
-          background: $color-accent;
+          padding: 0.125rem 0.5rem;
+          background: $color-background-secondary;
           border-radius: 0.4rem;
           margin-right: 0.4rem;
+          font-size: 0.7rem;
         }
       }
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Simplebar from 'simplebar-react';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
@@ -11,15 +10,14 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
   return (
-    <Simplebar style={{ maxHeight: '100vh' }}>
-      <div className="page-app">
+    <div className="page-app">
         {
           loading ? 
             <Loader /> :
@@ -33,15 +31,14 @@ function App() {
               <div className="o-spacer" />
               <Showcase />
               <div className="o-spacer" />
-              <TextBlock />
-              <div className="o-spacer" />
               <Contact />
+              <div className="o-spacer" />
+              <TextBlock />
               <div className="o-spacer" />
               <Footer />
             </React.Fragment>
         }
       </div>
-    </Simplebar>
   );
 }
 

@@ -105,6 +105,8 @@ input,
 textarea {
   background: transparent;
   outline: none;
+  resize: none;
+  overflow: hidden;
 }
 
 .is-desktop-only {
