@@ -24,7 +24,7 @@ function Header(props: Props) {
 
   function renderLink(menuItem: MenuItem) {
     if(menuItem.to) return (
-      <Link className="c-header__menu-item" to={menuItem.to} activeClass='is-active' spy={true} smooth={true} duration={300} offset={-90}>
+      <Link className="c-header__menu-item" to={menuItem.to} activeClass='is-active' spy={true} smooth={true} duration={300} offset={-90} onClick={() => setDrawerActive(false)}>
         {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
       </Link>
     );

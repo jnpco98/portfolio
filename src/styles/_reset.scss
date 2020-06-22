@@ -109,6 +109,10 @@ textarea {
   overflow: hidden;
 }
 
+.is-hidden {
+  visibility: hidden;
+}
+
 .is-desktop-only {
   display: none;
   @include media(medium) {

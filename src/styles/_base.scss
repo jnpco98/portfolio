@@ -1,4 +1,4 @@
-// Setup variables
+// Setup variables and initializations
 @import './colors';
 @import './gutter';
 @import './hamburgers-settings';
@@ -12,6 +12,7 @@
 
 // Node modules
 @import '~hamburgers/_sass/hamburgers/hamburgers';
+@import '~animate.css';
 
 // Objects
 @import './button';
@@ -30,3 +31,6 @@
 
 // Pages
 @import './pages/app';
+
+// Trumps
+@import './animation';
