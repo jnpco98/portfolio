@@ -2,10 +2,29 @@ import React, { useState, HTMLAttributes } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import { MAIL_SERVICE } from '../constants/api';
 
-type Props = HTMLAttributes<HTMLDivElement>;
+export type ContactContent = {
+  heading: string;
+  description: string[];
+  cta: string;
+  ctaLink: string;
+  form: {
+    heading: string;
+    firstNamePlaceholder: string;
+    lastNamePlaceholder: string;
+    companyPlaceholder: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
+    cta: string;
+  }
+}
+
+type Props = {
+  content: ContactContent;
+} & HTMLAttributes<HTMLDivElement>;
 
 function Contact(props: Props) {
-  const { className='', ...restProps } = props;
+  const { className='', content, ...restProps } = props;
+  const { heading, description, cta, ctaLink, form } = content;
 
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
@@ -39,21 +58,21 @@ function Contact(props: Props) {
   return(
     <section className={`c-contact ${className}`} {...restProps}>
       <div className="c-contact__introduction">
-        <h2 className="c-contact__introduction-title">Lorem ipsum dolor sit amet.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quis, voluptatum voluptates dolor voluptatibus ipsum?</p>
-        <a className="c-contact__introduction-cta">Lorem, ipsum dolor.</a>
+        <h2 className="c-contact__introduction-title">{heading}</h2>
+        {description.map(desc => <p key={desc}>{desc}</p>)}
+        <a className="c-contact__introduction-cta" href={ctaLink}>{cta}</a>
       </div>
       <div className="c-contact__divider" />
       <form className="c-contact__form" onSubmit={e => handleSubmit(e)}>
-        <h2 className="c-contact__title">Contact me</h2>
+        <h2 className="c-contact__title">{form.heading}</h2>
         <p className={`c-contact__form-success${mailResponse && mailResponse.length ? ' is-active' : ''}`}>{mailResponse}</p>
         <p className={`c-contact__form-error${errorMailResponse && errorMailResponse.length ? ' is-active' : ''}`}>{errorMailResponse}</p>
-        <input value={firstname} onChange={e => setFirstname(e.target.value)} placeholder="First name*" required/>
-        <input value={lastname} onChange={e => setLastname(e.target.value)} placeholder="Last name*" required/>
-        <input value={company} onChange={e => setCompany(e.target.value)} placeholder="Company" />
-        <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email*" required/>
-        <TextareaAutosize value={message} onChange={e => setMessage(e.target.value)} placeholder="Message*" minRows={5} required/>
-        <button className="c-contact__form-cta o-btn" type="submit">Submit</button>
+        <input value={firstname} onChange={e => setFirstname(e.target.value)} placeholder={form.firstNamePlaceholder} required/>
+        <input value={lastname} onChange={e => setLastname(e.target.value)} placeholder={form.lastNamePlaceholder} required/>
+        <input value={company} onChange={e => setCompany(e.target.value)} placeholder={form.companyPlaceholder} />
+        <input value={email} onChange={e => setEmail(e.target.value)} placeholder={form.emailPlaceholder} required/>
+        <TextareaAutosize value={message} onChange={e => setMessage(e.target.value)} placeholder={form.messagePlaceholder} minRows={5} required/>
+        <button className="c-contact__form-cta o-btn" type="submit">{form.cta}</button>
       </form>
     </section>
   );

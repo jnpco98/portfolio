@@ -1,22 +1,31 @@
 import React, { HTMLAttributes } from 'react';
+import { Link } from 'react-scroll';
 
-const bannerImg = "https://images.unsplash.com/photo-1591891265202-85efd3b810e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+export type BannerContent = {
+  image: string;
+  heading: string;
+  description: string[];
+  cta: string;
+  ctaLink: string;
+}
 
 type Props = {
   pageTitle?: boolean;
+  content: BannerContent;
 } & HTMLAttributes<HTMLDivElement>;
 
 function Banner(props: Props) {
-  const { className='', pageTitle, ...restProps } = props;
+  const { className='', pageTitle, content, ...restProps } = props;
+  const { image, heading, description, cta, ctaLink } = content;
 
   return(
     <section className={`c-banner ${className}`} {...restProps}>
-      <img className="c-banner__image" src={bannerImg}/>
+      <img className="c-banner__image" src={image}/>
       <div className="c-banner__content">
-        {pageTitle ? <h1 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h1> :
-          <h2 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h2>}
-        <p className="c-banner__content-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem soluta rerum nam, ex tempora aperiam vel ea culpa suscipit velit sit?</p>
-        <a className="c-banner__content-cta o-btn">Lorem, ipsum dolor.</a>
+        {pageTitle ? <h1 className="c-banner__content-title">{heading}</h1> :
+          <h2 className="c-banner__content-title">{heading}</h2>}
+        {description.map(s => <p className="c-banner__content-text" key={s}>{s}</p>)}
+        <Link className="c-banner__content-cta o-btn" to={ctaLink} spy={true} smooth={true} duration={300} offset={-90}>{cta}</Link>
       </div>
     </section>
   );

@@ -1,19 +1,30 @@
 import React, { HTMLAttributes } from 'react';
 
-type Props = HTMLAttributes<HTMLDivElement>;
+export type AboutContent = {
+  image: string;
+  heading: string;
+  subtitle: string;
+  description: string[];
+  cta: string;
+  ctaLink: string;
+}
+
+type Props = {
+  content: AboutContent;
+} & HTMLAttributes<HTMLDivElement>;
 
 function About(props: Props) {
-  const { className='', ...restProps } = props;
+  const { className='', content, ...restProps } = props;
+  const { image, heading, subtitle, description, cta, ctaLink } = content;
 
   return(
     <section className={`c-about ${className}`} {...restProps}>
-      <img className="c-about__left" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
+      <img className="c-about__left" src={image} />
       <div className="c-about__right">
-        <h2 className="c-about__right-title">Lorem ipsum dolor sit.</h2>
-        <p className="c-about__right-subtitle">Lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde quaerat officia deleniti perspiciatis, ipsa sapiente nulla saepe sunt autem.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat vitae repudiandae molestiae nobis a eveniet dignissimos. Blanditiis, possimus. Ducimus, atque!</p>
-        <a className="c-about__right-cta o-btn">Lorem, ipsum dolor.</a>
+        <h2 className="c-about__right-title">{heading}</h2>
+        <p className="c-about__right-subtitle">{subtitle}</p>
+        {description.map(desc => <p key={desc}>{desc}</p>)}
+        <a className="c-about__right-cta o-btn" href={ctaLink}>{cta}</a>
       </div>
     </section>
   );

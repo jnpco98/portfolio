@@ -1,15 +1,25 @@
 import React, { HTMLAttributes } from 'react';
 
-type Props = HTMLAttributes<HTMLDivElement>;
+export type TextBlockContent = {
+  heading: string;
+  description: string[];
+  cta: string;
+  ctaLink: string;
+};
+
+type Props = {
+  content: TextBlockContent;
+} & HTMLAttributes<HTMLDivElement>;
 
 function TextBlock(props: Props) {
-  const { className='', ...restProps } = props;
+  const { className='', content, ...restProps } = props;
+  const { heading, description, cta, ctaLink } = content;
 
   return(
     <section className={`c-text-block ${className}`} {...restProps}>
-      <h2 className="c-text-block__title">Lorem ipsum dolor sit amet consectetur.</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa eveniet quam voluptatem ducimus accusantium. Sit voluptatem unde aliquid maiores doloribus eius tenetur voluptas tempora nisi ullam aut sint ex et officiis veniam, blanditiis numquam enim itaque. Aut labore magni et!</p>
-      <a className="c-text-block__cta o-btn" href="#">Lorem, ipsum dolor.</a>
+      <h2 className="c-text-block__title">{heading}</h2>
+      {description.map(desc => <p key={desc}>{desc}</p>)}
+      <a className="c-text-block__cta o-btn" href={ctaLink}>{cta}</a>
     </section>
   );
 }

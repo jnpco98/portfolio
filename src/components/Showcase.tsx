@@ -3,127 +3,53 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-type Props = HTMLAttributes<HTMLDivElement>;
+export type ShowcaseContent = {
+  heading: string;
+  contents: {
+    image: string;
+    title: string;
+    description: string[];
+    stack: string[];
+    demo: string;
+    sourceCode: string;
+  }[];
+}
+
+type Props = {
+  content: ShowcaseContent;
+} & HTMLAttributes<HTMLDivElement>;
 
 function Showcase(props: Props) {
-  const { className='', ...restProps } = props;
+  const { className='', content, ...restProps } = props;
 
   return(
     <section className={`c-showcase ${className}`} {...restProps}>
-      <h2 className="c-showcase__title">Lorem ipsum dolor sit & amet consectetur.</h2>
+      <h2 className="c-showcase__title">{content.heading}</h2>
       <div className="c-showcase__grid">
-        <div className="c-showcase__grid__card">
-          <img className="c-showcase__grid__card-image" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"/>
-          <div className="c-showcase__grid__card-content">
-            <h3>Lorem ipsum dolor sit.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ipsa fugiat dolores nisi repellendus culpa mollitia.</p>
+        {content.contents.map(({ image, title, description, stack, sourceCode, demo }) => 
+          <div className="c-showcase__grid__card" key={title + description}>
+            <img className="c-showcase__grid__card-image" src={image} />
+            <div className="c-showcase__grid__card-content">
+              <h3>{title}</h3>
+              {description.map(desc => <p key={desc}>{desc}</p>)}
+            </div>
+            <div className="c-showcase__grid__card-stack">
+              {stack.map(s => <span key={s}>{s}</span>)}
+            </div>
+            <div className="c-showcase__grid__card-cta">
+              {demo &&
+                <a href={demo}>
+                  <FontAwesomeIcon icon={faLink} />
+                </a>
+              }
+              {sourceCode &&
+                <a href={sourceCode}>
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              }
+            </div>
           </div>
-          <div className="c-showcase__grid__card-stack">
-            <span>React</span><span>AWS</span><span>React</span><span>AWS</span><span>React</span><span>AWS</span>
-          </div>
-          <div className="c-showcase__grid__card-cta">
-            <a href="#">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      
-      <div className="c-showcase__grid__card">
-          <img className="c-showcase__grid__card-image" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"/>
-          <div className="c-showcase__grid__card-content">
-            <h3>Lorem ipsum dolor sit.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ipsa fugiat dolores nisi repellendus culpa mollitia.</p>
-          </div>
-          <div className="c-showcase__grid__card-stack">
-            <span>React</span><span>AWS</span><span>React</span><span>AWS</span><span>React</span><span>AWS</span>
-          </div>
-          <div className="c-showcase__grid__card-cta">
-            <a href="#">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      <div className="c-showcase__grid__card">
-          <img className="c-showcase__grid__card-image" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"/>
-          <div className="c-showcase__grid__card-content">
-            <h3>Lorem ipsum dolor sit.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ipsa fugiat dolores nisi repellendus culpa mollitia.</p>
-          </div>
-          <div className="c-showcase__grid__card-stack">
-            <span>React</span><span>AWS</span><span>React</span><span>AWS</span><span>React</span><span>AWS</span>
-          </div>
-          <div className="c-showcase__grid__card-cta">
-            <a href="#">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      <div className="c-showcase__grid__card">
-          <img className="c-showcase__grid__card-image" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"/>
-          <div className="c-showcase__grid__card-content">
-            <h3>Lorem ipsum dolor sit.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ipsa fugiat dolores nisi repellendus culpa mollitia.</p>
-          </div>
-          <div className="c-showcase__grid__card-stack">
-            <span>React</span><span>AWS</span><span>React</span><span>AWS</span><span>React</span><span>AWS</span>
-          </div>
-          <div className="c-showcase__grid__card-cta">
-            <a href="#">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      
-      <div className="c-showcase__grid__card">
-          <img className="c-showcase__grid__card-image" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"/>
-          <div className="c-showcase__grid__card-content">
-            <h3>Lorem ipsum dolor sit.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ipsa fugiat dolores nisi repellendus culpa mollitia.</p>
-          </div>
-          <div className="c-showcase__grid__card-stack">
-            <span>React</span><span>AWS</span><span>React</span><span>AWS</span><span>React</span><span>AWS</span>
-          </div>
-          <div className="c-showcase__grid__card-cta">
-            <a href="#">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      <div className="c-showcase__grid__card">
-          <img className="c-showcase__grid__card-image" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"/>
-          <div className="c-showcase__grid__card-content">
-            <h3>Lorem ipsum dolor sit.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime ipsa fugiat dolores nisi repellendus culpa mollitia.</p>
-          </div>
-          <div className="c-showcase__grid__card-stack">
-            <span>React</span><span>AWS</span><span>React</span><span>AWS</span><span>React</span><span>AWS</span>
-          </div>
-          <div className="c-showcase__grid__card-cta">
-            <a href="#">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      
-      
+        )}
       </div>
     </section>
   );
