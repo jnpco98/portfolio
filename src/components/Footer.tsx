@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { footerMenu } from '../constants/menu';
 
-function Footer() {
+type Props = HTMLAttributes<HTMLDivElement>;
+
+function Footer(props: Props) {
+  const { className='', ...restProps } = props;
+
   return(
-    <footer className="c-footer">
+    <footer className={`c-footer ${className}`} {...restProps}>
       <p className="c-footer__copyright">
         Copyright@2020 John Ortiz
       </p>

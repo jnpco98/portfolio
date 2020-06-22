@@ -22,20 +22,27 @@ function App() {
           loading ? 
             <Loader /> :
             <React.Fragment>
-              <Header />
-              <Banner pageTitle/>
+              <Header/>
+
+              <Banner id='main-banner' pageTitle />
               <div className="o-spacer" />
-              <About />
+
+              <About id='about' />
               <div className="o-spacer" />
-              <Features />
+
+              <Features id='features' />
               <div className="o-spacer" />
-              <Showcase />
+
+              <Showcase id='showcase' />
               <div className="o-spacer" />
-              <Contact />
+
+              <Contact id='contact' />
               <div className="o-spacer" />
+
               <TextBlock />
               <div className="o-spacer" />
-              <Footer />
+              
+              <Footer id='footer' />
             </React.Fragment>
         }
       </div>

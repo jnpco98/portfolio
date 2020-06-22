@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Showcase() {
+type Props = HTMLAttributes<HTMLDivElement>;
+
+function Showcase(props: Props) {
+  const { className='', ...restProps } = props;
+
   return(
-    <section className="c-showcase">
+    <section className={`c-showcase ${className}`} {...restProps}>
       <h2 className="c-showcase__title">Lorem ipsum dolor sit & amet consectetur.</h2>
       <div className="c-showcase__grid">
         <div className="c-showcase__grid__card">

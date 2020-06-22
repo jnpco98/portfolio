@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, HTMLAttributes } from 'react';
 import Dompurify from 'dompurify';
+import { Link } from 'react-scroll';
 import { MenuItem, primaryMenu, secondaryMenu, mobilePrimaryMenu, mobileSecondaryMenu } from '../constants/menu';
 
 const DEFAULT_FLOATING_HEADER_HEIGHT = 20;
 
-function Header() {
+type Props = HTMLAttributes<HTMLDivElement>;
+
+function Header(props: Props) {
+  const { className='', ...restProps } = props;
+
   const [floating, setFloating] = useState(false);
   const [drawerActive, setDrawerActive] = useState(false);
 
@@ -18,9 +23,17 @@ function Header() {
   });
 
   function renderLink(menuItem: MenuItem) {
-    return <a className="c-header__menu-item" href={menuItem.link}>
-      {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
-    </a>
+    if(menuItem.to) return (
+      <Link className="c-header__menu-item" to={menuItem.to} activeClass='is-active' spy={true} smooth={true} duration={300} offset={-90}>
+        {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
+      </Link>
+    );
+
+    return (
+      <a className="c-header__menu-item" href={menuItem.link}>
+        {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
+      </a>
+    );
   }
 
   function renderHamburger() {
@@ -37,7 +50,7 @@ function Header() {
 
   return (
     <React.Fragment>
-      <header className={`c-header${floating ? " is-floating" : ""}`}>
+      <header className={`c-header${floating ? " is-floating" : ""}${className}`} {...restProps}>
         {/* Mobile header */}
         <ul className="is-mobile-only">{renderHamburger()}</ul>
         <ul className="is-mobile-only">

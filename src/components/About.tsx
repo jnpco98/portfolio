@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
-function About() {
+type Props = HTMLAttributes<HTMLDivElement>;
+
+function About(props: Props) {
+  const { className='', ...restProps } = props;
+
   return(
-    <section className="c-about">
+    <section className={`c-about ${className}`} {...restProps}>
       <img className="c-about__left" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
       <div className="c-about__right">
         <h2 className="c-about__right-title">Lorem ipsum dolor sit.</h2>

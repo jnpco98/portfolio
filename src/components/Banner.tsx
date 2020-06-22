@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
 const bannerImg = "https://images.unsplash.com/photo-1591891265202-85efd3b810e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
 
 type Props = {
   pageTitle?: boolean;
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 function Banner(props: Props) {
-  const { pageTitle } = props;
+  const { className='', pageTitle, ...restProps } = props;
 
   return(
-    <section className="c-banner">
+    <section className={`c-banner ${className}`} {...restProps}>
       <img className="c-banner__image" src={bannerImg}/>
       <div className="c-banner__content">
         {pageTitle ? <h1 className="c-banner__content-title">Lorem ipsum dolor sit amet.</h1> :
