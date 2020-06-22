@@ -17,6 +17,6 @@ $color-selection: lightgray;
 $color-backdrop: transparentize($color-default, 0.5);
 
 $color-info: #EE7752;
-$color-success: #23DBAB;
+$color-success: $color-primary;
 $color-warning: #E73C7E;
 $color-error: #E73C7E;
