@@ -42,13 +42,13 @@ function Contact() {
         <div className="c-contact__divider" />
         <form className="c-contact__form" onSubmit={e => handleSubmit(e)}>
           <h2 className="c-contact__title">Contact me</h2>
-          <input value={firstname} onChange={e => setFirstname(e.target.value)} placeholder="First name" />
-          <input value={lastname} onChange={e => setLastname(e.target.value)} placeholder="Last name" />
+          <p className={`c-contact__form-success${mailResponse && mailResponse.length ? ' is-active' : ''}`}>{mailResponse}</p>
+          <p className={`c-contact__form-error${errorMailResponse && errorMailResponse.length ? ' is-active' : ''}`}>{errorMailResponse}</p>
+          <input value={firstname} onChange={e => setFirstname(e.target.value)} placeholder="First name*" required/>
+          <input value={lastname} onChange={e => setLastname(e.target.value)} placeholder="Last name*" required/>
           <input value={company} onChange={e => setCompany(e.target.value)} placeholder="Company" />
-          <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
-          <TextareaAutosize value={message} onChange={e => setMessage(e.target.value)} placeholder="Message" minRows={5} />
-          {mailResponse && mailResponse.length && <p className="c-contact__form-success">{mailResponse}</p>}
-          {errorMailResponse && errorMailResponse.length && <p className="c-contact__form-error">{errorMailResponse}</p>}
+          <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email*" required/>
+          <TextareaAutosize value={message} onChange={e => setMessage(e.target.value)} placeholder="Message*" minRows={5} required/>
           <button className="c-contact__form-cta o-btn" type="submit">Submit</button>
         </form>
     </section>

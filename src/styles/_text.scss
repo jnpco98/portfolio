@@ -60,6 +60,7 @@ a {
   display: inline-block;
   position: relative;
   overflow-x: hidden;
+  font-weight: $font-bold;
   
   &:before {
     bottom: 0;
