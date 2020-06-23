@@ -1,0 +1,17 @@
+.react-images__view-image {
+  width: 90%;
+  border-radius: 1rem;
+  
+  &#{&} {
+    max-width: 80rem;    
+  }
+  
+  @include media(small) {
+    width: 70%;
+  }
+}
+
+.is-section-animated {
+  animation-delay: 0s;
+  animation-duration: 1s;
+}

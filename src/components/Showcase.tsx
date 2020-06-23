@@ -1,12 +1,13 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useState } from 'react';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Lightbox from './Lightbox';
 
 export type ShowcaseContent = {
   heading: string;
   contents: {
-    image: string;
+    images: string[];
     title: string;
     description: string[];
     stack: string[];
@@ -26,11 +27,18 @@ function Showcase(props: Props) {
     <section className={`c-showcase ${className}`} {...restProps}>
       <h2 className="c-showcase__title">{content.heading}</h2>
       <div className="c-showcase__grid">
-        {content.contents.map(({ image, title, description, stack, sourceCode, demo }) => 
+        {content.contents.map(({ images, title, description, stack, sourceCode, demo }) => 
           <div className="c-showcase__grid__card" key={title + description}>
-            <img className="c-showcase__grid__card-image" src={image} alt='Showcase' />
+
+            <div className="c-showcase__grid__card-image-wrapper">
+              <Lightbox imgClassName='c-showcase__grid__card-image' views={images.map(img => ({ source: img }))}/>
+            </div>
+
+
             <div className="c-showcase__grid__card-content">
-              <h3>{title}</h3>
+              <a className="c-showcase__grid__card-content-title" href={sourceCode || demo} target='_blank' rel='noopener noreferrer'>
+                <h3>{title}</h3>
+              </a>
               {description.map(desc => <p key={desc}>{desc}</p>)}
             </div>
             <div className="c-showcase__grid__card-stack">

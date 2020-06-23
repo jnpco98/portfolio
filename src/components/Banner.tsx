@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 import { Link } from 'react-scroll';
+import { linkScrollSettings } from '../constants/scroll';
 
 export type BannerContent = {
   image: string;
@@ -25,7 +26,7 @@ function Banner(props: Props) {
         {pageTitle ? <h1 className="c-banner__content-title">{heading}</h1> :
           <h2 className="c-banner__content-title">{heading}</h2>}
         {description.map(s => <p className="c-banner__content-text" key={s}>{s}</p>)}
-        <Link className="c-banner__content-cta o-btn" to={ctaLink} spy={true} smooth={true} duration={300} offset={-90}>{cta}</Link>
+        <Link className="c-banner__content-cta o-btn" to={ctaLink} {...linkScrollSettings}>{cta}</Link>
       </div>
     </section>
   );

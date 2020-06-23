@@ -2,13 +2,16 @@ import React, { useState, useEffect, HTMLAttributes } from 'react';
 import Dompurify from 'dompurify';
 import { Link } from 'react-scroll';
 import { MenuItem, primaryMenu, secondaryMenu, mobilePrimaryMenu, mobileSecondaryMenu } from '../constants/menu';
+import { linkScrollSettings } from '../constants/scroll';
 
 const DEFAULT_FLOATING_HEADER_HEIGHT = 20;
 
-type Props = HTMLAttributes<HTMLDivElement>;
+type Props = {
+  logo: string;
+} & HTMLAttributes<HTMLDivElement>;
 
 function Header(props: Props) {
-  const { className='', ...restProps } = props;
+  const { className='', logo, ...restProps } = props;
 
   const [floating, setFloating] = useState(false);
   const [drawerActive, setDrawerActive] = useState(false);
@@ -24,7 +27,7 @@ function Header(props: Props) {
 
   function renderLink(menuItem: MenuItem) {
     if(menuItem.to) return (
-      <Link className="c-header__menu-item" to={menuItem.to} activeClass='is-active' spy={true} smooth={true} duration={300} offset={-90} onClick={() => setDrawerActive(false)}>
+      <Link className="c-header__menu-item" to={menuItem.to} {...linkScrollSettings} onClick={() => setDrawerActive(false)}>
         {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
       </Link>
     );
@@ -54,6 +57,7 @@ function Header(props: Props) {
         {/* Mobile header */}
         <ul className="is-mobile-only">{renderHamburger()}</ul>
         <ul className="is-mobile-only">
+          <Link to='' className="c-header__logo" dangerouslySetInnerHTML={{ __html: Dompurify.sanitize(logo) }}/>
           {mobilePrimaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
         </ul>
         <div className={`c-header__side-drawer is-mobile-only${drawerActive ? " is-active" : ""}`}>
@@ -63,6 +67,7 @@ function Header(props: Props) {
 
         {/* Desktop header */}
         <ul className="is-desktop-only">
+          <Link to='' className="c-header__logo" {...linkScrollSettings} dangerouslySetInnerHTML={{ __html: Dompurify.sanitize(logo) }}/>
           {primaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
         </ul>
         <ul className="is-desktop-only">

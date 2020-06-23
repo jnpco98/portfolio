@@ -21,7 +21,7 @@ function App() {
   const [contactEntered, setContactEntered] = useState(false);
   const [textBlockEntered, setTextBlockEntered] = useState(false);
 
-  const { banner, about, features, showcase, contact, textBlock } = settings.homepage;
+  const {  banner, about, features, showcase, contact, textBlock } = settings.homepage;
 
   const sectionAnimatedClass = 'animate__animated is-section-animated';
 
@@ -35,7 +35,7 @@ function App() {
           loading ? 
             <Loader /> :
             <React.Fragment>
-              <Header/>
+              <Header logo={settings.logo}/>
 
               <Waypoint onEnter={() => setBannerEntered(true)} />
               <Banner id='main-banner' className={`${bannerEntered ? `${sectionAnimatedClass} animate__backInDown` : 'is-hidden'}`} pageTitle content={banner} />
