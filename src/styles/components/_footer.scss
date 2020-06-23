@@ -8,12 +8,15 @@
   max-width: $max-screen-width;
 
   p {
-    color: white;
+    color: $color-primary-compliment;
   }
 
   a {
     margin-right: 0.7rem;
-    color: white;
+    color: $color-primary-compliment;
+    &:before {
+      background: $color-primary-compliment;
+    }
   }
 
   padding: 1rem $gutter 0.8rem;

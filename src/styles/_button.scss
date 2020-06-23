@@ -6,6 +6,11 @@
   padding: 0.7rem 1rem;
   border-radius: 0.3rem;
   font-weight: $font-regular;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: transparentize($color: $color-accent, $amount: 0.2);
+  }
 
   &:before {
     content: none;
@@ -15,5 +20,9 @@
     @extend .o-btn;
     background-color: $color-primary;
     color: $color-primary-compliment;
+
+    &:hover {
+      background-color: transparentize($color: $color-primary, $amount: 0.2);
+    }
   }
 }
