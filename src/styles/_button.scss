@@ -1,13 +1,19 @@
 .o-btn {
   display: block;
-  color: $color-secondary;
+  color: $color-primary;
   background-color: $color-accent;
   text-transform: uppercase;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 0.3rem;
   font-weight: $font-regular;
 
   &:before {
     content: none;
+  }
+
+  &--alternative {
+    @extend .o-btn;
+    background-color: $color-primary;
+    color: $color-primary-compliment;
   }
 }

@@ -34,10 +34,10 @@ summary, time, mark, audio, video, textarea, input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   outline: none;
-  color: $color-default;
+  color: $color-primary;
 
   &::selection {
-    color: $color-default;
+    color: $color-primary;
     background: $color-selection;
   }
 }

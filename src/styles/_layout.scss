@@ -1,6 +1,18 @@
 .o-spacer {
-  height: 4rem;
+  height: 3rem;
   width: 100%;
+
+  @include media(small) {
+    height: 4rem;
+  }
+
+  @include media(medium) {
+    height: 5rem;
+  }
+
+  @include media(large) {
+    height: 8rem;
+  }
 }
 
 .o-divider {

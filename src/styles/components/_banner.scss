@@ -9,6 +9,7 @@
   position: relative;
   padding: 2rem 1.5rem;
   min-height: 15rem;
+  max-width: $max-screen-width;
 
   &__image {
     width: 100%;
@@ -27,13 +28,13 @@
     flex-direction: column;
     
     &-title {
-      color: $color-secondary;
+      color: $color-primary-compliment;
       width: 80%;
       margin-bottom: 0.7rem;
     }
 
     &-text {
-      color: $color-secondary;
+      color: $color-primary-compliment;
     }
 
     &-cta {

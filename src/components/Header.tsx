@@ -57,7 +57,7 @@ function Header(props: Props) {
         {/* Mobile header */}
         <ul className="is-mobile-only">{renderHamburger()}</ul>
         <ul className="is-mobile-only">
-          <Link to='' className="c-header__logo" dangerouslySetInnerHTML={{ __html: Dompurify.sanitize(logo) }}/>
+          {/* <Link to='' className="c-header__logo" dangerouslySetInnerHTML={{ __html: Dompurify.sanitize(logo) }}/> */}
           {mobilePrimaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
         </ul>
         <div className={`c-header__side-drawer is-mobile-only${drawerActive ? " is-active" : ""}`}>
@@ -67,7 +67,7 @@ function Header(props: Props) {
 
         {/* Desktop header */}
         <ul className="is-desktop-only">
-          <Link to='' className="c-header__logo" {...linkScrollSettings} dangerouslySetInnerHTML={{ __html: Dompurify.sanitize(logo) }}/>
+          {/* <Link to='' className="c-header__logo" {...linkScrollSettings} dangerouslySetInnerHTML={{ __html: Dompurify.sanitize(logo) }}/> */}
           {primaryMenu.map(m => <React.Fragment key={m.key}>{renderLink(m)}</React.Fragment>)}
         </ul>
         <ul className="is-desktop-only">

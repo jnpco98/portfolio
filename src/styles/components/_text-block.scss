@@ -7,6 +7,7 @@
   padding: 2rem $gutter;
   border-radius: 1rem;
   text-align: center;
+  max-width: $max-screen-width;
 
   &__title {
     text-align: center;

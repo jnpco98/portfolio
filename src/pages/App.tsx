@@ -12,7 +12,7 @@ import Footer from '../components/Footer';
 import settings from '../data/settings.json';
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [bannerEntered, setBannerEntered] = useState(false);
   const [aboutEntered, setAboutEntered] = useState(false);
@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <div className="page-app">
+    <div className={`page-app${!loading ? ' is-loaded' : ''}`}>
         {
           loading ? 
             <Loader /> :

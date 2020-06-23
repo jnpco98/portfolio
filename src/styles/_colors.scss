@@ -1,22 +1,16 @@
-$color-default: #343A40;
-$color-default-subdued: lightgray;
-
-$color-background: white;
-$color-background-secondary: aquamarine;
-
 $color-primary: #343A40;
 $color-primary-hover : #343A40;
+$color-primary-compliment: #FAFAFA;
+$color-primary-compliment-hover: #FAFAFA;
 
-$color-secondary: #FAFAFA;
-$color-secondary-hover: #FAFAFA;
+$color-background: white;
+$color-background-secondary: #64FFDA;
 
-$color-accent: $color-primary;
+$color-accent: #64FFDA;
 
 $color-selection: lightgray;
 
-$color-backdrop: transparentize($color-default, 0.5);
+$color-backdrop: transparentize($color-primary, 0.5);
 
-$color-info: #EE7752;
 $color-success: $color-primary;
-$color-warning: #E73C7E;
 $color-error: #E73C7E;

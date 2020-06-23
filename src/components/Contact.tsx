@@ -72,7 +72,7 @@ function Contact(props: Props) {
         <input value={company} onChange={e => setCompany(e.target.value)} placeholder={form.companyPlaceholder} />
         <input value={email} onChange={e => setEmail(e.target.value)} placeholder={form.emailPlaceholder} required/>
         <TextareaAutosize value={message} onChange={e => setMessage(e.target.value)} placeholder={form.messagePlaceholder} minRows={5} required/>
-        <button className="c-contact__form-cta o-btn" type="submit">{form.cta}</button>
+        <button className="c-contact__form-cta o-btn--alternative" type="submit">{form.cta}</button>
       </form>
     </section>
   );

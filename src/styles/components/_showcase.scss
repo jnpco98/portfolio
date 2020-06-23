@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  max-width: $max-screen-width;
 
   &__title {
     text-align: center;
@@ -65,11 +66,12 @@
 
         span {
           display: inline-block;
-          padding: 0.125rem 0.5rem;
-          background: $color-background-secondary;
+          padding: 0.2rem 0.5rem;
+          background: $color-primary;
+          color: $color-primary-compliment;
           border-radius: 0.4rem;
           margin-right: 0.4rem;
-          font-size: 0.7rem;
+          font-size: 0.67rem;
         }
       }
 
