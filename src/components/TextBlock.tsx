@@ -19,7 +19,7 @@ function TextBlock(props: Props) {
     <section className={`c-text-block ${className}`} {...restProps}>
       <h2 className="c-text-block__title">{heading}</h2>
       {description.map(desc => <p key={desc}>{desc}</p>)}
-      <a className="c-text-block__cta o-btn" href={ctaLink} target='_blank'>{cta}</a>
+      <a className="c-text-block__cta o-btn" href={ctaLink} target='_blank' rel='noopener noreferrer'>{cta}</a>
     </section>
   );
 }

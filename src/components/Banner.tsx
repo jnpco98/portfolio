@@ -20,7 +20,7 @@ function Banner(props: Props) {
 
   return(
     <section className={`c-banner ${className}`} {...restProps}>
-      <img className="c-banner__image" src={image}/>
+      <img className="c-banner__image" src={image} alt='Banner'/>
       <div className="c-banner__content">
         {pageTitle ? <h1 className="c-banner__content-title">{heading}</h1> :
           <h2 className="c-banner__content-title">{heading}</h2>}

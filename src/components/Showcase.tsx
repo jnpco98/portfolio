@@ -28,7 +28,7 @@ function Showcase(props: Props) {
       <div className="c-showcase__grid">
         {content.contents.map(({ image, title, description, stack, sourceCode, demo }) => 
           <div className="c-showcase__grid__card" key={title + description}>
-            <img className="c-showcase__grid__card-image" src={image} />
+            <img className="c-showcase__grid__card-image" src={image} alt='Showcase' />
             <div className="c-showcase__grid__card-content">
               <h3>{title}</h3>
               {description.map(desc => <p key={desc}>{desc}</p>)}
@@ -38,12 +38,12 @@ function Showcase(props: Props) {
             </div>
             <div className="c-showcase__grid__card-cta">
               {demo &&
-                <a href={demo} target='_blank'>
+                <a href={demo} target='_blank' rel='noopener noreferrer'>
                   <FontAwesomeIcon icon={faLink} />
                 </a>
               }
               {sourceCode &&
-                <a href={sourceCode} target='_blank'>
+                <a href={sourceCode} target='_blank' rel='noopener noreferrer'>
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               }

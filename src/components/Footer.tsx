@@ -16,7 +16,7 @@ function Footer(props: Props) {
         {content.copyright}
       </p>
       <div>
-        {footerMenu.map(m => <a key={m.key} href={m.link} target='_blank'>{m.label}</a>)}
+        {footerMenu.map(m => <a key={m.key} href={m.link} target='_blank' rel='noopener noreferrer'>{m.label}</a>)}
       </div>
     </footer>
   );

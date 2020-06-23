@@ -2,7 +2,7 @@
   "homepage": {
     "banner": {
       "image": "https://images.unsplash.com/photo-1591891265202-85efd3b810e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-      "heading": "Hi there, I'm John",
+      "heading": "Hi there,\n I'm John",
       "description": [
         "I'm a sydney based software developer. Click the button below to get in touch, or scroll down to learn more about me."
       ],
@@ -159,7 +159,7 @@
       }
     },
     "textBlock": {
-      "heading": "Thank you for taking the time to check out my portfolio",
+      "heading": "Thanks for checking out my porfolio",
       "description": [
         "If you're interested in working with me or got any questions, check out the section above to get in touch, or you can review my resume with the link below. Have a great day, speak soon."
       ],

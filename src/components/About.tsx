@@ -19,7 +19,7 @@ function About(props: Props) {
 
   return(
     <section className={`c-about ${className}`} {...restProps}>
-      <img className="c-about__left" src={image} />
+      <img className="c-about__left" src={image} alt='About' />
       <div className="c-about__right">
         <h2 className="c-about__right-title">{heading}</h2>
         <p className="c-about__right-subtitle">{subtitle}</p>
