@@ -30,7 +30,7 @@ function Header(props: Props) {
     );
 
     return (
-      <a className="c-header__menu-item" href={menuItem.link}>
+      <a className="c-header__menu-item" href={menuItem.link} target='_blank'>
         {menuItem.icon ? Dompurify.sanitize(menuItem.icon) : menuItem.label}
       </a>
     );

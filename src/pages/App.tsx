@@ -67,7 +67,7 @@ function App() {
               <Waypoint onEnter={() => setTextBlockEntered(true)} />
               <div className="o-spacer" />
               
-              <Footer id='footer' />
+              <Footer id='footer' content={settings.footer} />
             </React.Fragment>
         }
       </div>

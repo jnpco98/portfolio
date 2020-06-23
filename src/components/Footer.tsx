@@ -1,18 +1,22 @@
 import React, { HTMLAttributes } from 'react';
 import { footerMenu } from '../constants/menu';
 
-type Props = HTMLAttributes<HTMLDivElement>;
+type Props = {
+  content: {
+    copyright: string;
+  }
+} & HTMLAttributes<HTMLDivElement>;
 
 function Footer(props: Props) {
-  const { className='', ...restProps } = props;
+  const { className='', content, ...restProps } = props;
 
   return(
     <footer className={`c-footer ${className}`} {...restProps}>
       <p className="c-footer__copyright">
-        Copyright@2020 John Ortiz
+        {content.copyright}
       </p>
       <div>
-        {footerMenu.map(m => <a key={m.key} href={m.link}>{m.label}</a>)}
+        {footerMenu.map(m => <a key={m.key} href={m.link} target='_blank'>{m.label}</a>)}
       </div>
     </footer>
   );

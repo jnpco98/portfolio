@@ -10,8 +10,8 @@ export type ShowcaseContent = {
     title: string;
     description: string[];
     stack: string[];
-    demo: string;
-    sourceCode: string;
+    demo?: string;
+    sourceCode?: string;
   }[];
 }
 
@@ -38,12 +38,12 @@ function Showcase(props: Props) {
             </div>
             <div className="c-showcase__grid__card-cta">
               {demo &&
-                <a href={demo}>
+                <a href={demo} target='_blank'>
                   <FontAwesomeIcon icon={faLink} />
                 </a>
               }
               {sourceCode &&
-                <a href={sourceCode}>
+                <a href={sourceCode} target='_blank'>
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               }

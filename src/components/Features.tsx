@@ -19,7 +19,7 @@ function Features(props: Props) {
 
   return (
     <section className={`c-features ${className}`} {...restProps}>
-      <h2 className="c-features__title">Lorem ipsum dolor sit & amet consectetur.</h2>
+      <h2 className="c-features__title">{content.heading}</h2>
       <div className="c-features__grid">
         {content.contents.map(({ title, description, icon }) => 
           <div className="c-features__grid__card">
