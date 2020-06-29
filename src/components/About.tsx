@@ -24,7 +24,7 @@ function About(props: Props) {
         <h2 className="c-about__right-title">{heading}</h2>
         <p className="c-about__right-subtitle">{subtitle}</p>
         {description.map(desc => <p key={desc}>{desc}</p>)}
-        <a className="c-about__right-cta o-btn--alternative" href={ctaLink}>{cta}</a>
+        <a className="c-about__right-cta o-btn--alternative" href={ctaLink} target='_blank' rel='noopener noreferrer'>{cta}</a>
       </div>
     </section>
   );

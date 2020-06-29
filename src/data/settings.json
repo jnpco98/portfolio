@@ -57,13 +57,13 @@
             "Developed an efficient, flexible, graphql api that follows Facebook's Relay specs. It includes features like authorization and authentication, roles, limits per call, and an advanced query builder capable of searching the database for the exact data you need."
           ],
           "stack": [
-            "Typescript",
+            "TS",
             "Graphql",
             "Node",
             "SQL",
             "AWS"
           ],
-          "demo": "#",
+          "demo": "https://gql-sample.jnpco98.com/graphql",
           "sourceCode": "https://github.com/jnpco98/ukiyonovels/tree/gql/server",
           "images": [
             "https://jnpco-demos.s3-ap-southeast-2.amazonaws.com/graphql-demo/1.png",
@@ -77,13 +77,13 @@
             "Built a fast and efficient REST API that processes an image and returns an ascii art, which you can then preview in the web client built with React. The project is deployed in AWS as a serverless function."
           ],
           "stack": [
-            "Typescript",
+            "TS",
             "React SSR",
             "Microservices",
             "Node",
             "Styled Components"
           ],
-          "demo": "#",
+          "demo": "https://asciify.art",
           "sourceCode": "https://github.com/jnpco98/asciify",
           "images": [
             "https://jnpco-demos.s3-ap-southeast-2.amazonaws.com/asciify-demo/1.png",
@@ -97,12 +97,12 @@
             "Developed a Single Page App in React using SCSS that showcases some information about me. It also features a Mail service API that can be used to contact me, which is currently hosted in AWS as a serverless function."
           ],
           "stack": [
-            "Typescript",
+            "TS",
             "React",
             "SCSS",
             "AWS"
           ],
-          "demo": "#",
+          "demo": "https://jnpco98.com",
           "sourceCode": "https://github.com/jnpco98/portfolio",
           "images": [
             "https://jnpco-demos.s3-ap-southeast-2.amazonaws.com/portfolio-demo/1.png",
@@ -128,22 +128,6 @@
           ]
         },
         {
-          "title": "Unity Games",
-          "description": [
-            "Built a flexible and extensible event driven core system framework that extends the unity engine and used it to built hyper casual games for the play store."
-          ],
-          "stack": [
-            "C#",
-            "Unity",
-            "Photoshop",
-            "Admob"
-          ],
-          "demo": "#",
-          "images": [
-            "https://jnpco-demos.s3-ap-southeast-2.amazonaws.com/graphql-demo/2.png"
-          ]
-        },
-        {
           "title": "Web Scraper",
           "description": [
             "Built scripts that fetches dynamic html that bypasses limits like cloudflare, recaptcha, user agent checks. The script extracts and converts the data to the format required to be passed into an api."
@@ -153,7 +137,7 @@
             "Puppeteer",
             "AWS"
           ],
-          "sourceCode": "#",
+          "sourceCode": "https://github.com/jnpco98/scripts/tree/master/rln/rln_scrape",
           "images": [
             "https://jnpco-demos.s3-ap-southeast-2.amazonaws.com/novel-scrape-demo/1.png"
           ]

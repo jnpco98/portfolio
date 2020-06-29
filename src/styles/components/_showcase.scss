@@ -108,11 +108,12 @@
     &__grid {
       padding: 0rem $gutter-small;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
 
       &__card {
-        width: 48%;
-        margin-bottom: 2rem;
+        width: 45%;
+        margin: 0 2.5%;
+        margin-bottom: 1rem;
 
         &-icon {
           width: 5rem;
@@ -131,6 +132,9 @@
       
       &__card {
         width: 30%;
+        margin: 0 1.5%;
+        margin-bottom: 1.8rem;
+
         &-icon {
           width: 6rem;
         }
